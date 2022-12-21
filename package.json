@@ -1,0 +1,15 @@
+{
+  "name": "app-front",
+  "version": "0.0.1",
+  "type": "module",
+  "entry": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "dependencies": {
+    "axios": "^1.2.1",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "nodemon": "^2.0.20"
+  }
+}
