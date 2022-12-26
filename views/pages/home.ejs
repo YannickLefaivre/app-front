@@ -4,25 +4,27 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Les restaurants</title>
+    <title><%= title %></title>
   </head>
   <body>
-    <h1>Galerie</h1>
+    <%- include("../partials/header") %>
 
-    <ul>
-      <% for(let i = 0; i < list.length; i++) { %>
-      <li><%= list[i].attributes.name %></li>
-      <% } %>
-    </ul>
+    <main>
+      <section>
+        <h1><%= title %></h1>
 
-    <script>
-      class PopUpInfos extends HTMLElement {
-        constructor() {
-          super()
+        <% for(let i = 0; i < list.length; i++) { %>
+        <a href="/restaurant?id=<%= list[i].id %>">
+          <article>
+            <img src="#" alt="">
 
-          this.attachShadow({ mode: "open"})
-        }
-      }
-    </script>
+            <h2><%= list[i].attributes.name %></h2>
+          </article>
+        </a>
+        <% } %>
+      </section>
+    </main>
+
+    <%- include("../partials/footer") %>
   </body>
 </html>
