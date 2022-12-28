@@ -2,7 +2,6 @@
   "name": "app-front",
   "version": "0.0.1",
   "type": "module",
-  "entry": "app.js",
   "scripts": {
     "start": "nodemon app.js"
   },

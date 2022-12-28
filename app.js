@@ -1,10 +1,18 @@
+import { fileURLToPath } from 'url'
+import path from 'path'
 import express from 'express'
 import { getRestaurant, getRestaurants } from './api/restaurants.js'
 
-const app = express()
-const port = 8080
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
 
+const app = express()
+const port = 3000
+
+app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs')
+
+app.use(express.static(__dirname + 'plubic'))
 
 app.get('/', async (req, res) => {
   const restaurants = await getRestaurants()
