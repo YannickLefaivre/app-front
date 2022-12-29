@@ -12,10 +12,14 @@ const port = 3000
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs')
 
-app.use(express.static(__dirname + 'plubic'))
+app.use(express.static(path.join(__dirname, 'public')))
 
 app.get('/', async (req, res) => {
   const restaurants = await getRestaurants()
+
+  for (let i = 0; i < restaurants.length; i++) {
+    restaurants[i].attributes.thumbnail = `images/restaurants/restaurant-${i + 1}.jpg`;
+  }
 
   res.render('pages/home', {
     title: 'Accueil',
