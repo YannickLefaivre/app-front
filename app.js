@@ -18,7 +18,7 @@ app.get('/', async (req, res) => {
   const restaurants = await getRestaurants()
 
   for (let i = 0; i < restaurants.length; i++) {
-    restaurants[i].attributes.thumbnail = `images/restaurants/restaurant-${i + 1}.jpg`;
+    restaurants[i].attributes.thumbnail = `images/restaurants/restaurant-${restaurants[i].id}.jpg`;
   }
 
   res.render('pages/home', {
@@ -29,6 +29,9 @@ app.get('/', async (req, res) => {
 
 app.get('/restaurant', async (req, res) => {
   const restaurant = await getRestaurant(req.query.id)
+
+  restaurant.attributes.thumbnail = `images/restaurants/restaurant-${req.query.id}.jpg`;
+
   res.render('pages/restaurant', { data: restaurant })
 })
 

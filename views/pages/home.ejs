@@ -4,24 +4,39 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
     <title><%= title %></title>
   </head>
-  <body>
+  <body class="container">
     <%- include("../partials/header") %>
 
     <main>
-      <section>
-        <h1><%= title %></h1>
+      <section class="section">
+        <h1 class="title is-1"><%= title %></h1>
 
-        <% for(let i = 0; i < list.length; i++) { %>
-        <a href="/restaurant?id=<%= list[i].id %>">
-          <article>
-            <img src="<%= list[i].attributes.thumbnail %>" alt="" />
+        <div class="tile is-ancestor is-flex-wrap-wrap">
+          <% for(let i = 0; i < list.length; i++) { %>
+          <div class="tile is-parent is-4">
+            <a class="tile is-child" href="/restaurant?id=<%= list[i].id %>">
+              <article class="card">
+                <div class="card-image">
+                  <figure class="image is-5by4">
+                    <img src="<%= list[i].attributes.thumbnail %>" alt="" />
+                  </figure>
+                </div>
 
-            <h2><%= list[i].attributes.name %></h2>
-          </article>
-        </a>
-        <% } %>
+                <div class="card-content">
+                  <h2 class="title is-4">
+                    <%= list[i].attributes.name %>
+                  </h2>
+                </div>
+              </article>
+            </a>
+          </div>
+          <% } %>
+        </div>
       </section>
     </main>
 
