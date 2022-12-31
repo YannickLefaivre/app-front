@@ -1,56 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="stylesheets/style.css">
     <title><%= data.attributes.name %></title>
   </head>
 
-  <body>
+  <body class="container">
     <%- include("../partials/header") %>
 
-    <main>
-      <section>
-        <div>
-          <img src="#" alt="" srcset="" />
+    <main class="section is-medium py-6">
+      <section class="hero">
+        <div class="hero-body has-text-centered">
+          <figure class="image is-3by2">
+            <img class="is-rounded" src="<%= data.attributes.thumbnail %>">
+          </figure>
 
-          <h1><%= data.attributes.name %></h1>
+          <h1 class="title is-1 is-size-3-mobile mt-3"><%= data.attributes.name %></h1>
+
+          <p class="is-size-3 is-size-5-mobile">note : <%= data.attributes.rate %></p>
         </div>
-
-        <button>note : <%= data.attributes.rate %></button>
-      </section>
-      
-      <section>
-        <article>
-          <img src="#" alt="">
-
-          <h2>Nom du plat</h2>
-        </article>
-      </section>
-
-      <section>
-        <article>
-          <img src="#" alt="">
-
-          <h2>Nom du plat</h2>
-        </article>
-      </section>
-
-      <section>
-        <article>
-          <img src="#" alt="">
-
-          <h2>Nom du plat</h2>
-        </article>
-      </section>
-
-      <section>
-        <article>
-          <img src="#" alt="">
-
-          <h2>Nom du plat</h2>
-        </article>
       </section>
     </main>
 

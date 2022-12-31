@@ -1,19 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="stylesheets/style.css">
     <title>Restaurant</title>
   </head>
-  <body>
+  <body class="container">
     <%- include("../partials/header") %>
 
-    <main>
-      <img src="images/restaurants/apicius.jpg" alt="" />
-      <section>
-        <h1>À propos</h1>
-        
+    <main class="section">
+      <section class="content">
+        <h1 class="title is-1">À propos</h1>
+
         <p>
           TrouveTonResto est une plateforme permettant à la population martiniquaise
           de découvrir les merveilles culinaires de leur île à travers les
@@ -21,11 +24,12 @@
         </p>
       </section>
 
-      <section>
-        <h2>Crédits</h2>
+      <section class="content">
+        <h2 class="title is-4">Crédits</h2>
 
         <p>
-          Photo du restaurant Apicius - de Life Of Pix: https://www.pexels.com/fr-fr/photo/verre-a-vin-clair-sur-table-67468/
+          Photo du restaurant Apicius - de Life Of Pix:
+          https://www.pexels.com/fr-fr/photo/verre-a-vin-clair-sur-table-67468/
         </p>
       </section>
     </main>
